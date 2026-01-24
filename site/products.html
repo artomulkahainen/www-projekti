@@ -2,11 +2,13 @@
 <html lang="fi">
     <head>
         <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>
             Kitarakeskus - Jokainen meistä ansaitsee vähän paremman kitaran
         </title>
         <link rel="stylesheet" href="style.css" />
         <link rel="stylesheet" href="nav.css" />
+        <link rel="stylesheet" href="products.css" />
         <link
             href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Poppins:wght@300;400;600&display=swap"
             rel="stylesheet"
@@ -21,12 +23,73 @@
                 <a class="nav-basic-link" href="company.html">YRITYS</a>
                 <a class="contact-button" href="contact.html">OTA YHTEYTTÄ</a>
             </div>
+            <figure class="hambuger-figure">
+                <img class="hamburger-menu-btn" src="icons/menu.svg" />
+            </figure>
         </nav>
 
-        <main class="main-content">
-            <section id="test">
-                <h1>Tuotesivu!</h1>
-                <p>Best</p>
+        <main class="products-content">
+            <section class="products-description">
+                <article class="products-description-text-container">
+                    <h1 class="products-description-text">Tuotteet</h1>
+                    <p class="products-description-text">
+                        Oletko aloittamassa uutta harrastusta? Oletko jo kokenut
+                        konkari? Meiltä löydät kitaraa hyvin monenlaiseen
+                        tarkoitukseen ja genreen. Tarvitsitpa sitten hevikeppiä
+                        tai perinteisempää kitaraa, olet tullut oikeaan
+                        paikkaan.
+                    </p>
+                    <p class="products-description-text">
+                        Tarkasta valikoimamme alta.
+                    </p>
+                </article>
+            </section>
+            <h2 style="padding: 1rem">Hevikitarat</h2>
+            <section class="products-section">
+                <article class="product-container">
+                    <h3>Halpa Harley Benttonin Hevikitara</h3>
+                    <figure class="img-figure">
+                        <img
+                            src="https://fast-images.static-thomann.de/pics/bdb/_15/155255/14305508_800.jpg"
+                            alt="Halpa harrikka"
+                            class="product-img"
+                        />
+                    </figure>
+                    <p>
+                        <i>
+                            Tämä kitara on vähän sellainen, että voihan sen
+                            ostaa, mutta paha mieli tulee kaupan päälle.
+                        </i>
+                    </p>
+                    <div class="product-bottom">
+                        <p>Hinta: 299€</p>
+                        <button class="add-to-cart-btn">
+                            Lisää ostoskoriin
+                        </button>
+                    </div>
+                </article>
+                <article class="product-container">
+                    <h3>Schecterin hevikeppi</h3>
+                    <figure class="img-figure">
+                        <img
+                            src="https://bdbo1.thomann.de/thumb/bdb3000/pics/bdbo/16978724.jpg"
+                            alt="Schecterin värikäs tapaus"
+                            class="product-img"
+                        />
+                    </figure>
+                    <p>
+                        <i>
+                            Tästä kitarasta löytyy kampi, jota on mukava
+                            veivata.
+                        </i>
+                    </p>
+                    <div class="product-bottom">
+                        <p>Hinta: 1699€</p>
+                        <button class="add-to-cart-btn">
+                            Lisää ostoskoriin
+                        </button>
+                    </div>
+                </article>
             </section>
         </main>
 

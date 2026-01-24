@@ -18,12 +18,13 @@
     align-items: center;
     justify-content: flex-end;
     width: 50%;
-    padding-right: 100px;
+    padding-right: 2rem;
 }
 
 .nav-basic-link {
     text-decoration: none;
-    padding: 0px 15px;
+    padding: 0rem 1rem;
+    cursor: pointer;
 }
 
 .logo {
@@ -35,4 +36,31 @@
     border-radius: 30px;
     text-decoration: none;
     padding: 5px 15px;
+    min-width: 9rem;
+    cursor: pointer;
+}
+
+.hamburger-figure {
+    display: none;
+}
+
+.hamburger-menu-btn {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .nav-right-div {
+        display: none;
+    }
+
+    .hamburger-menu-btn {
+        display: block;
+        width: 3rem;
+        height: 3rem;
+    }
+
+    .hambuger-figure {
+        display: block;
+        padding: 1.5rem;
+    }
 }
