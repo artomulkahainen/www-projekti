@@ -4,13 +4,49 @@
     padding: 0;
 }
 
+/* Typografia */
 body {
-    font-family: Poppins, Montserrat;
+    font-family: 'Poppins';
     font-weight: 400;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.1rem;
+}
+
+h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.7rem;
 }
 
 a {
     color: #fcf8f5;
+}
+
+/* Painikkeiden tyylit */
+.button {
+    display: inline-block;
+    background-color: #0F2854;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 30px;
+    padding: 15px 25px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    margin-top: 0.5rem;
+    text-transform: uppercase;
+}
+
+.button:hover {
+    background-color: rgba(30, 47, 87, 0.7);
 }
 
 /* Sanojen tavutuksen pakotus pois päältä*/
@@ -36,4 +72,38 @@ h6 a {
 a,
 p a  {
     text-decoration: none !important;
+}
+
+/* Contact */
+.contact-column {
+    background-color: #0F2854;
+}
+
+/* Etusivu */
+.hero-front {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                url('images/etusivu-hero.jpg') center center/cover no-repeat;
+    color: white;
+    text-align: center;
+    position: relative;
+    height: 700px;
+
+}
+
+.highlight {
+    font-weight: 600;
+    color: #0F2854;
+    background-color: rgba(255, 255, 255, 0.5);
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 20px;
+}
+
+.cta {
+    background: linear-gradient(#0F285480, #0F285480),
+                url('images/Kitarakeskus-cta.jpg') center center/cover no-repeat;
+    color: white;
+    text-align: center;
+    position: relative;
+    height: 500px;
 }
