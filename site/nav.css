@@ -28,7 +28,8 @@
 }
 
 .logo {
-    color: #fcf8f5;
+    height: 50px;
+    width: auto;
 }
 
 .contact-button {

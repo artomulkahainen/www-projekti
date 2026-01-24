@@ -6,6 +6,13 @@
         <title>
             Kitarakeskus - Jokainen meistä ansaitsee vähän paremman kitaran
         </title>
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+            crossorigin="anonymous"
+        />
+
         <link rel="stylesheet" href="style.css" />
         <link rel="stylesheet" href="nav.css" />
         <link
@@ -15,7 +22,15 @@
     </head>
     <body>
         <nav class="nav">
-            <div class="nav-left-div"><p class="logo">Kitarakeskus</p></div>
+            <div class="nav-left-div">
+                <a href="index.html">
+                    <img
+                        class="logo"
+                        src="images/Kitarakeskus.png"
+                        alt="Kitarakeskus"
+                    />
+                </a>
+            </div>
             <div class="nav-right-div">
                 <a class="nav-basic-link" href="index.html">ETUSIVU</a>
                 <a class="nav-basic-link" href="products.html">TUOTTEET</a>
@@ -28,10 +43,14 @@
         </nav>
 
         <main class="main-content">
-            <section id="test">
-                <h1>Yhteydenotto!</h1>
-                <p>whaa</p>
-            </section>
+            <div class="container py-5">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h1>Yhteystiedot</h1>
+                    </div>
+                    <div class="col-md-6 contact-column">Column</div>
+                </div>
+            </div>
         </main>
 
         <footer class="footer">
