@@ -14,13 +14,26 @@ a {
 }
 
 /* Sanojen tavutuksen pakotus pois päältä*/
-h1, h2, h3, h4, h5, h6, p, h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a {
     word-break: keep-all;
     hyphens: none;
     word-wrap: initial;
 }
 
 /* Linkkien underline pakotus pois päältä */
-a, p a  {
-    text-decoration:none!important;
+a,
+p a  {
+    text-decoration: none !important;
 }
