@@ -43,12 +43,14 @@
 
 .hamburger-figure {
     display: none;
+    cursor: pointer;
 }
 
 .hamburger-menu-btn {
     display: none;
 }
 
+/* Hamburger piiloon desktopissa */
 @media (max-width: 768px) {
     .nav-right-div {
         display: none;
