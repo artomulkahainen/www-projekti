@@ -78,7 +78,9 @@ p a  {
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 :root{
-  --bg: #000;
+
+    
+  background-color: #0F2854;
   --panel: #f6f3ef;
   --blue: #0f2a55;
   --blue2: #1e3a8a;
