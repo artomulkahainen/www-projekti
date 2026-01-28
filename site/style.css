@@ -8,7 +8,7 @@
 body {
     font-family: 'Poppins';
     font-weight: 400;
-    font-size: 18px;
+    font-size: 17px;
     line-height: 1.6;
 }
 
@@ -87,15 +87,15 @@ a, p a {
 /* CONTACT */
 .contact-section{
   padding: 46px 0 90px;
+  background-color: #fcf8f5;
 }
 
 .contact-panel{
   background: var(--panel);
   color:#111;
-  padding: 64px 82px;
   display:flex;
-  align-items:center;            /* pitää saman linjan */
-  justify-content:space-between; /* vasen ja oikea erilleen */
+  align-items:center;
+  justify-content:space-between;
   gap: 80px;
 }
 
@@ -105,26 +105,23 @@ a, p a {
 }
 
 .contact-left h1{
-  font-size: 40px;
   line-height: 1.05;
-  color: var(--blue2);
+  color: #0F2854;
   margin-bottom: 22px;
   font-weight: 800;
 }
 
 .contact-text p{
-  font-size: 14px;
   line-height: 1.6;
 }
 
 .strong{ font-weight: 700; }
 
 .contact-card{
-  background: var(--blue);
+  background: #0F2854;
   color:#fff;
-  padding: 34px 56px;
+  padding: 4rem;
   border-radius: 18px;
-  width: 360px;  /* lukitsee kortin koon kuvan kaltaiseksi */
 }
 
 .contact-card-block + .contact-card-block{
@@ -132,10 +129,9 @@ a, p a {
 }
 
 .label{
-  font-size: 13px;
   font-weight: 700;
   letter-spacing: .6px;
-  margin-bottom: 6px;
+  margin-bottom: 0px;
 }
 
 .value{
@@ -175,6 +171,15 @@ a, p a {
     text-align: center;
     position: relative;
     height: 500px;
+}
+
+.kapea {
+    max-width: 800px;
+}
+
+.tumma {
+    background-color: #0f2854;
+    color: #ffffff;
 }
 
 /* COMPANY */
