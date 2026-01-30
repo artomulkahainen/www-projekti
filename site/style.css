@@ -4,12 +4,19 @@
     padding: 0;
 }
 
+html {
+    height: 100%;
+}
+
 /* Typografia */
 body {
     font-family: 'Poppins';
     font-weight: 400;
     font-size: 17px;
     line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 h1 {
@@ -37,21 +44,23 @@ a {
 }
 
 @media (max-width: 768px) {
-.py-5 {
-  padding: 2rem 1rem 2rem 1rem!important;
-  }
+    .py-5 {
+        padding: 2rem 1rem 2rem 1rem !important;
+    }
 }
 
 /* Painikkeiden tyylit */
 .button {
     display: inline-block;
-    background-color: #0F2854;
-    color: #FFFFFF;
+    background-color: #0f2854;
+    color: #ffffff;
     border: none;
     border-radius: 30px;
     padding: 15px 25px;
     cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s;
+    transition:
+        background-color 0.3s,
+        transform 0.2s;
     margin-top: 0.5rem;
     text-transform: uppercase;
 }
@@ -80,70 +89,73 @@ h6 a {
 }
 
 /* Linkkien underline pakotus pois päältä */
-a, p a {
+a,
+p a {
     text-decoration: none !important;
 }
 
 /* CONTACT */
-.contact-section{
-  padding: 46px 0 90px;
-  background-color: #fcf8f5;
+.contact-section {
+    padding: 46px 0 90px;
+    background-color: #fcf8f5;
 }
 
-.contact-panel{
-  background: var(--panel);
-  color:#111;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap: 80px;
+.contact-panel {
+    background: var(--panel);
+    color: #111;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 80px;
 }
 
-.contact-left{
-  flex: 1;
-  min-width: 360px;
+.contact-left {
+    flex: 1;
+    min-width: 360px;
 }
 
-.contact-left h1{
-  line-height: 1.05;
-  color: #0F2854;
-  margin-bottom: 22px;
-  font-weight: 800;
+.contact-left h1 {
+    line-height: 1.05;
+    color: #0f2854;
+    margin-bottom: 22px;
+    font-weight: 800;
 }
 
-.contact-text p{
-  line-height: 1.6;
+.contact-text p {
+    line-height: 1.6;
 }
 
-.strong{ font-weight: 700; }
-
-.contact-card{
-  background: #0F2854;
-  color:#fff;
-  padding: 4rem;
-  border-radius: 18px;
+.strong {
+    font-weight: 700;
 }
 
-.contact-card-block + .contact-card-block{
-  margin-top: 18px;
+.contact-card {
+    background: #0f2854;
+    color: #fff;
+    padding: 4rem;
+    border-radius: 18px;
 }
 
-.label{
-  font-weight: 700;
-  letter-spacing: .6px;
-  margin-bottom: 0px;
+.contact-card-block + .contact-card-block {
+    margin-top: 18px;
 }
 
-.value{
-  font-size: 14px;
-  opacity: .95;
+.label {
+    font-weight: 700;
+    letter-spacing: 0.6px;
+    margin-bottom: 0px;
 }
 
+.value {
+    font-size: 14px;
+    opacity: 0.95;
+}
 
 /* ETUSIVU */
 .hero-front {
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
-                url('images/etusivu-hero.jpg') center center/cover no-repeat;
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url('images/etusivu-hero.jpg') center center/cover no-repeat;
     color: white;
     text-align: center;
     position: relative;
@@ -152,21 +164,22 @@ a, p a {
 
 .highlight {
     font-weight: 600;
-    color: #0F2854;
+    color: #0f2854;
     background-color: rgba(255, 255, 255, 0.5);
     display: inline-block;
     padding: 5px 10px;
     border-radius: 20px;
-    margin-bottom: 0rem!important;
+    margin-bottom: 0rem !important;
 }
 
 .hero-front .container {
-  max-width: 800px;
+    max-width: 800px;
 }
 
 .cta {
-    background: linear-gradient(#0F285480, #0F285480),
-                url('images/Kitarakeskus-cta.jpg') center center/cover no-repeat;
+    background:
+        linear-gradient(#0f285480, #0f285480),
+        url('images/Kitarakeskus-cta.jpg') center center/cover no-repeat;
     color: white;
     text-align: center;
     position: relative;
@@ -184,19 +197,20 @@ a, p a {
 
 /* COMPANY */
 .company-cta1 {
-    background: linear-gradient(rgba(30, 47, 87, 0.6), rgba(30, 47, 87, 0.6)),
-                url('images/Kitarakeskus-company.jpg') center center/cover no-repeat;
+    background:
+        linear-gradient(rgba(30, 47, 87, 0.6), rgba(30, 47, 87, 0.6)),
+        url('images/Kitarakeskus-company.jpg') center center/cover no-repeat;
     color: white;
     position: relative;
 }
 
 .company-cta2 {
-  background-color: #000000;
-  color: #FFF;
+    background-color: #000000;
+    color: #fff;
 }
 
 .company-cta2 img {
-  border-radius: 30px;
+    border-radius: 30px;
 }
 
 /* FOOTER */
@@ -213,12 +227,12 @@ a, p a {
 }
 
 .copyright {
-    background-color: #000000!important;
-    color: #FFF!important;
+    background-color: #000000 !important;
+    color: #fff !important;
 }
 
 .copyright p {
-    margin-bottom: 0rem!important;
+    margin-bottom: 0rem !important;
     padding-bottom: 0.5rem;
 }
 
@@ -227,6 +241,6 @@ footer {
 }
 
 footer p {
-    margin-bottom: 0rem!important;
+    margin-bottom: 0rem !important;
     font-size: 15px;
 }

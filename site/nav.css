@@ -4,14 +4,14 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
+    flex-shrink: 0;
 }
 
 @media (min-width: 768px) {
-.nav {
-    padding-left: 5rem;
-    padding-right: 5rem;
-}
-    
+    .nav {
+        padding-left: 5rem;
+        padding-right: 5rem;
+    }
 }
 
 .nav-left-div {
