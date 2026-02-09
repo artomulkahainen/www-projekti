@@ -5,6 +5,8 @@ services:
             dockerfile: Dockerfile.ui
         container_name: ecommerce-ui
         image: www-projekti:latest
+        depends_on:
+            - backend
         ports:
             - '3000:80'
         volumes:
@@ -19,6 +21,7 @@ services:
         restart: unless-stopped
         depends_on:
             - db
+            - migration
         environment:
             DB_HOST: db
             DB_PORT: 3306
@@ -29,6 +32,26 @@ services:
             - '8080:80'
         volumes:
             - ./api/:/var/www/html
+    migration:
+        image: python:3.14-slim
+        environment:
+            DB_HOST: db
+            DB_PORT: 3306
+            DB_NAME: myapp
+            DB_USER: user
+            DB_PASSWORD: pw12345
+        depends_on:
+            - db
+        volumes:
+            - ./scripts/migrate.py:/app/migrate.py:ro
+        working_dir: /app
+        entrypoint: ['/bin/sh', '-c']
+        command: >
+            "pip install --no-cache-dir pymysql &&
+            pip install --upgrade pip setuptools wheel && 
+            pip install cryptography && 
+            python migrate.py"
+        restart: 'no'
     db:
         image: mysql:8.0
         container_name: ecommerce-db
