@@ -1,3 +1,5 @@
+<?php
+?>
 <!doctype html>
 <html lang="fi">
     <head>
@@ -22,7 +24,7 @@
     <body>
         <nav class="nav">
             <div class="nav-left-div">
-                <a href="index.html">
+                <a href="index.php">
                     <img
                         class="logo"
                         src="images/Kitarakeskus.png"
@@ -32,10 +34,10 @@
             </div>
 
             <div class="nav-right-div">
-                <a class="nav-basic-link" href="index.html">ETUSIVU</a>
-                <a class="nav-basic-link" href="products.html">TUOTTEET</a>
-                <a class="nav-basic-link" href="company.html">YRITYS</a>
-                <a class="contact-button" href="contact.html">OTA YHTEYTTÄ</a>
+                <a class="nav-basic-link" href="index.php">ETUSIVU</a>
+                <a class="nav-basic-link" href="products.php">TUOTTEET</a>
+                <a class="nav-basic-link" href="company.php">YRITYS</a>
+                <a class="contact-button" href="contact.php">OTA YHTEYTTÄ</a>
             </div>
         </nav>
 
@@ -101,7 +103,7 @@
                                     Oletko valmis aloittamaan matkasi?
                                 </strong>
                             </p>
-                            <a href="contact.html" class="button">
+                            <a href="contact.php" class="button">
                                 Ota yhteyttä
                             </a>
                         </div>
@@ -132,8 +134,8 @@
 
                     <div class="col-12 col-md">
                         <p><b>Pikalinkit</b></p>
-                        <p><a href="products.html">Tuotteet</a></p>
-                        <p><a href="company.html">Yritys</a></p>
+                        <p><a href="products.php">Tuotteet</a></p>
+                        <p><a href="company.php">Yritys</a></p>
                     </div>
 
                     <div class="col-12 col-md">

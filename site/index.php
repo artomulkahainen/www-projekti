@@ -1,3 +1,5 @@
+<?php
+?>
 <!doctype html>
 <html lang="fi">
     <head>
@@ -23,7 +25,7 @@
     <body>
         <nav class="nav">
             <div class="nav-left-div">
-                <a href="index.html">
+                <a href="index.php">
                     <img
                         class="logo"
                         src="images/Kitarakeskus.png"
@@ -33,10 +35,10 @@
             </div>
 
             <div class="nav-right-div">
-                <a class="nav-basic-link" href="index.html">ETUSIVU</a>
-                <a class="nav-basic-link" href="products.html">TUOTTEET</a>
-                <a class="nav-basic-link" href="company.html">YRITYS</a>
-                <a class="contact-button" href="contact.html">OTA YHTEYTTÄ</a>
+                <a class="nav-basic-link" href="index.php">ETUSIVU</a>
+                <a class="nav-basic-link" href="products.php">TUOTTEET</a>
+                <a class="nav-basic-link" href="company.php">YRITYS</a>
+                <a class="contact-button" href="contact.php">OTA YHTEYTTÄ</a>
             </div>
         </nav>
 
@@ -54,7 +56,7 @@
                         soittajille. Meidän kanssamme pääset nopeasti ja
                         helposti soittamaan.
                     </p>
-                    <a href="products.html" class="button">Katso valikoima</a>
+                    <a href="products.php" class="button">Katso valikoima</a>
                 </div>
             </section>
             <section class="py-5 tumma">
@@ -88,7 +90,7 @@
                                 luotettavasti. Olitpa vasta-alkaja tai kokenut
                                 soittaja, meiltä löydät sopivan kitaran.
                             </p>
-                            <a href="company.html" class="button">Lue lisää</a>
+                            <a href="company.php" class="button">Lue lisää</a>
                         </div>
                         <div
                             class="col-12 col-md d-flex justify-content-center"
@@ -116,7 +118,7 @@
                         musiikkiin, kun taas akustinen kitara on hyvä valinta
                         säestykseen ja kotisoittoon.
                     </p>
-                    <a href="contact.html" class="button">Ota yhteyttä</a>
+                    <a href="contact.php" class="button">Ota yhteyttä</a>
                 </div>
             </section>
         </main>
@@ -136,8 +138,8 @@
 
                     <div class="col-12 col-md">
                         <p><b>Pikalinkit</b></p>
-                        <p><a href="products.html">Tuotteet</a></p>
-                        <p><a href="company.html">Yritys</a></p>
+                        <p><a href="products.php">Tuotteet</a></p>
+                        <p><a href="company.php">Yritys</a></p>
                     </div>
 
                     <div class="col-12 col-md">

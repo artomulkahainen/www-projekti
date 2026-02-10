@@ -24,17 +24,28 @@ def main():
         print(f"❌ Could not connect to MySQL: {exc}", file=sys.stderr)
         sys.exit(1)
 
-    MIGRATION_NAME = "add_custom_table_and_marker_row_v1"
-
     try:
         with conn.cursor() as cur:
+            cur.execute(
+                """
+                CREATE TABLE IF NOT EXISTS product_category (
+                    id   INT AUTO_INCREMENT PRIMARY KEY,
+                    name    VARCHAR(255) NOT NULL
+                ) ENGINE=InnoDB;
+                """
+            )
+                        
             cur.execute(
                 """
                 CREATE TABLE IF NOT EXISTS product (
                     id   INT AUTO_INCREMENT PRIMARY KEY,
                     name    VARCHAR(255) NOT NULL,
+                    description VARCHAR(255),
                     image_url   VARCHAR(500) NOT NULL,
-                    price   NUMERIC NOT NULL
+                    price   NUMERIC NOT NULL,
+                    product_category_id INT NOT NULL,
+                    CONSTRAINT fk_product_product_category
+                        FOREIGN KEY (product_category_id) REFERENCES product_category(id)
                 ) ENGINE=InnoDB;
                 """
             )
