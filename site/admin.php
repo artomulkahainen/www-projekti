@@ -1,5 +1,12 @@
 <?php
-    session_start();
+session_start();
+
+if (!isset($_SESSION['kirjautunut']) || $_SESSION['kirjautunut'] !== true) {
+    header("Location: login.php");
+    exit;
+}
+	
+session_start();
 
     if (isset($_GET['logout'])) {
         session_unset();
