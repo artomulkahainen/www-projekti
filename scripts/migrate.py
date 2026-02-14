@@ -57,7 +57,7 @@ def main():
                     rating    INT NOT NULL,
                     product_id  INT NOT NULL,
                     CONSTRAINT fk_product_review_product
-                        FOREIGN KEY (product_id) REFERENCES product(id)
+                        FOREIGN KEY (product_id) REFERENCES product(id) ON DELETE CASCADE
                 ) ENGINE=InnoDB;
                 """
             )
