@@ -8,7 +8,7 @@ $pdo = handleDbConnection();
 $data = [];
 
 $stmt = $pdo->query('
-    SELECT P.*, PC.name as category_name, COALESCE(ROUND(AVG(PR.rating), 2), 0) as rating_avg  
+    SELECT P.id as pid, P.*, PC.name as category_name, COALESCE(ROUND(AVG(PR.rating), 2), 0) as rating_avg  
     FROM product P
     LEFT JOIN product_review PR ON PR.product_id = P.id
     LEFT JOIN product_category PC ON PC.id = P.product_category_id
@@ -106,11 +106,26 @@ foreach ($data as $row) {
                             <p>
                                 <i><?= htmlspecialchars($product['description'], ENT_QUOTES, 'UTF-8') ?></i>
                             </p>
-                            <div class="product-bottom">
-                                <p>Arvostelujen keskiarvo: <?= htmlspecialchars((string)($product['rating_avg'] ?? 0), ENT_QUOTES, 'UTF-8') ?></p>
+                            <div class="product-rating">
+                                <p>Arvostelujen keskiarvo: <b><?= htmlspecialchars((string)($product['rating_avg'] ?? 0), ENT_QUOTES, 'UTF-8') ?></b></p>
+                                <form action="send-rating.php" method="POST">
+                                    <label for="rating-select">
+                                        Anna arvostelu:
+                                    </label>
+                                    <select id="rating-select" name="rating">
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3" selected>3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                    </select>
+                                    <input type="hidden" name="productid"
+                                        value="<?= htmlspecialchars((string)$product['pid'], ENT_QUOTES, 'UTF-8') ?>">
+                                    <button type="submit">Lähetä</button>
+                                </form>
                             </div>
                             <div class="product-bottom">
-                                <p>Hinta: <?= htmlspecialchars($product['price'], ENT_QUOTES, 'UTF-8') ?>€</p>
+                                <p>Hinta: <b><?= htmlspecialchars($product['price'], ENT_QUOTES, 'UTF-8') ?>€</b></p>
                                 <button class="add-to-cart-btn">
                                     Lisää ostoskoriin
                                 </button>

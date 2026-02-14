@@ -61,8 +61,15 @@
     max-width: 50%;
 }
 
+.product-rating {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
 .product-bottom {
     display: flex;
+    margin: 1rem 0rem;
     gap: 1rem;
     align-items: center;
     justify-content: space-between;
