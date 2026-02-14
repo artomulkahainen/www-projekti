@@ -5,8 +5,27 @@ require_once __DIR__ . '/utils/helpers.php';
 use function App\Api\Utils\handleDbConnection;
 
 $pdo = handleDbConnection();
-$data = null;
+$data = [];
 
+$stmt = $pdo->query('
+    SELECT P.*, PC.name as category_name, COALESCE(ROUND(AVG(PR.rating), 2), 0) as rating_avg  
+    FROM product P
+    LEFT JOIN product_review PR ON PR.product_id = P.id
+    LEFT JOIN product_category PC ON PC.id = P.product_category_id
+    GROUP BY P.id
+');
+$data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$products_by_category = [];
+
+foreach ($data as $row) {
+    $category_id = $row['product_category_id'];
+
+    if (!isset($products_by_category[$category_id])) {
+        $products_by_category[$category_id] = [];
+    }
+
+    $products_by_category[$category_id][] = $row;
+}
 ?>
 <!doctype html>
 <html lang="fi">
@@ -67,170 +86,40 @@ $data = null;
                     </p>
                 </article>
             </section>
-            <h2 style="padding: 1rem">Hevikitarat</h2>
-            <section class="products-section">
-                <article class="product-container">
-                    <h3>Halpa Harley Benttonin Hevikitara</h3>
-                    <figure class="img-figure">
-                        <img
-                            src="https://fast-images.static-thomann.de/pics/bdb/_15/155255/14305508_800.jpg"
-                            alt="Halpa harrikka"
-                            class="product-img"
-                        />
-                    </figure>
-                    <p>
-                        <i>Aina epävireessä.</i>
-                    </p>
-                    <div class="product-bottom">
-                        <p>Hinta: 299€</p>
-                        <button class="add-to-cart-btn">
-                            Lisää ostoskoriin
-                        </button>
-                    </div>
-                </article>
-                <article class="product-container">
-                    <h3>Schecterin hevikeppi</h3>
-                    <figure class="img-figure">
-                        <img
-                            src="https://bdbo1.thomann.de/thumb/bdb3000/pics/bdbo/16978724.jpg"
-                            alt="Schecterin värikäs tapaus"
-                            class="product-img"
-                        />
-                    </figure>
-                    <p>
-                        <i>
-                            Tästä kitarasta löytyy kampi, jota on mukava
-                            veivata.
-                        </i>
-                    </p>
-                    <div class="product-bottom">
-                        <p>Hinta: 1699€</p>
-                        <button class="add-to-cart-btn">
-                            Lisää ostoskoriin
-                        </button>
-                    </div>
-                </article>
-            </section>
-            <h2 style="padding: 1rem">Stratocasterit</h2>
-            <section class="products-section">
-                <article class="product-container">
-                    <h3>Fender Stratocaster</h3>
-                    <figure class="img-figure">
-                        <img
-                            src="https://fast-images.static-thomann.de/pics/bdb/_50/500675/19282776_800.jpg"
-                            alt="Fender Strato"
-                            class="product-img"
-                        />
-                    </figure>
-                    <p>
-                        <i>Legenda, joka ei esittelyjä kaipaa.</i>
-                    </p>
-                    <div class="product-bottom">
-                        <p>Hinta: 2199€</p>
-                        <button class="add-to-cart-btn">
-                            Lisää ostoskoriin
-                        </button>
-                    </div>
-                </article>
-                <article class="product-container">
-                    <h3>Fender Strato</h3>
-                    <figure class="img-figure">
-                        <img
-                            src="https://fast-images.static-thomann.de/pics/bdb/_54/548695/19243393_800.jpg"
-                            alt="Fender Strato"
-                            class="product-img"
-                        />
-                    </figure>
-                    <p>
-                        <i>Punainen paholainen.</i>
-                    </p>
-                    <div class="product-bottom">
-                        <p>Hinta: 2299€</p>
-                        <button class="add-to-cart-btn">
-                            Lisää ostoskoriin
-                        </button>
-                    </div>
-                </article>
-                <article class="product-container">
-                    <h3>Harley Benton Stratocaster</h3>
-                    <figure class="img-figure">
-                        <img
-                            src="https://fast-images.static-thomann.de/pics/bdb/_13/135304/19535195_800.jpg"
-                            alt="Harrikka Strato"
-                            class="product-img"
-                        />
-                    </figure>
-                    <p>
-                        <i>Valkoinen ja halpa.</i>
-                    </p>
-                    <div class="product-bottom">
-                        <p>Hinta: 99€</p>
-                        <button class="add-to-cart-btn">
-                            Lisää ostoskoriin
-                        </button>
-                    </div>
-                </article>
-                <article class="product-container">
-                    <h3>Solar Guitars Cannibalismo</h3>
-                    <figure class="img-figure">
-                        <img
-                            src="https://fast-images.static-thomann.de/pics/bdb/_53/538136/18011942_800.jpg"
-                            alt="Strato"
-                            class="product-img"
-                        />
-                    </figure>
-                    <p>
-                        <i>Niille, jotka kaipaavat väriä elämään.</i>
-                    </p>
-                    <div class="product-bottom">
-                        <p>Hinta: 576€</p>
-                        <button class="add-to-cart-btn">
-                            Lisää ostoskoriin
-                        </button>
-                    </div>
-                </article>
-            </section>
-            <h2 style="padding: 1rem">Akkarit</h2>
-            <section class="products-section">
-                <article class="product-container">
-                    <h3>Martin Johnny Cash Signature</h3>
-                    <figure class="img-figure">
-                        <img
-                            src="https://fast-images.static-thomann.de/pics/bdb/_55/556129/18060617_800.jpg"
-                            alt="Martin Johnny Cash"
-                            class="product-img"
-                        />
-                    </figure>
-                    <p>
-                        <i>Tähän on luottanut country-legendakin.</i>
-                    </p>
-                    <div class="product-bottom">
-                        <p>Hinta: 6700€</p>
-                        <button class="add-to-cart-btn">
-                            Lisää ostoskoriin
-                        </button>
-                    </div>
-                </article>
-                <article class="product-container">
-                    <h3>Martin Custom</h3>
-                    <figure class="img-figure">
-                        <img
-                            src="https://fast-images.static-thomann.de/pics/bdb/_59/595170/19870025_800.jpg"
-                            alt="Martin akkari"
-                            class="product-img"
-                        />
-                    </figure>
-                    <p>
-                        <i>Hinta kuuluu sen soinnissa.</i>
-                    </p>
-                    <div class="product-bottom">
-                        <p>Hinta: 4999€</p>
-                        <button class="add-to-cart-btn">
-                            Lisää ostoskoriin
-                        </button>
-                    </div>
-                </article>
-            </section>
+
+            <?php if (empty($products_by_category)): ?>
+            <p>Ei tuotteita</p>
+            <?php else: ?>
+                <?php foreach ($products_by_category as $data_in_category): ?>
+                    <h2 style="padding: 1rem"><?= htmlspecialchars($data_in_category[0]['category_name'], ENT_QUOTES, 'UTF-8') ?></h2>
+                    <section class="products-section">
+                    <?php foreach ($data_in_category as $product): ?>
+                        <article class="product-container">
+                            <h3><?= htmlspecialchars($product['name'], ENT_QUOTES, 'UTF-8') ?></h3>
+                            <figure class="img-figure">
+                                <img
+                                    src="<?= htmlspecialchars($product['image_url'], ENT_QUOTES, 'UTF-8') ?>"
+                                    alt="<?= htmlspecialchars($product['description'], ENT_QUOTES, 'UTF-8') ?>"
+                                    class="product-img"
+                                />
+                            </figure>
+                            <p>
+                                <i><?= htmlspecialchars($product['description'], ENT_QUOTES, 'UTF-8') ?></i>
+                            </p>
+                            <div class="product-bottom">
+                                <p>Arvostelujen keskiarvo: <?= htmlspecialchars((string)($product['rating_avg'] ?? 0), ENT_QUOTES, 'UTF-8') ?></p>
+                            </div>
+                            <div class="product-bottom">
+                                <p>Hinta: <?= htmlspecialchars($product['price'], ENT_QUOTES, 'UTF-8') ?>€</p>
+                                <button class="add-to-cart-btn">
+                                    Lisää ostoskoriin
+                                </button>
+                            </div>
+                        </article>
+                    <?php endforeach; ?>
+                    </section>
+                <?php endforeach; ?>
+            <?php endif; ?>
         </main>
         <footer>
             <div class="container py-5 footer">
