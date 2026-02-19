@@ -1,0 +1,157 @@
+<?php
+?>
+<!doctype html>
+<html lang="fi">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>
+            Kitarakeskus - Jokainen meistä ansaitsee vähän paremman kitaran
+        </title>
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+            crossorigin="anonymous"
+        />
+        <link rel="stylesheet" href="style.css" />
+        <link rel="stylesheet" href="nav.css" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Poppins:wght@300;400;600&display=swap"
+            rel="stylesheet"
+        />
+    </head>
+    <body>
+        <nav class="nav">
+            <div class="nav-left-div">
+                <a href="index.php">
+                    <img
+                        class="logo"
+                        src="images/Kitarakeskus.png"
+                        alt="Kitarakeskus"
+                    />
+                </a>
+            </div>
+
+            <div class="nav-right-div">
+                <a class="nav-basic-link" href="index.php">ETUSIVU</a>
+                <a class="nav-basic-link" href="products.php">TUOTTEET</a>
+                <a class="nav-basic-link" href="company.php">YRITYS</a>
+                <a class="contact-button" href="contact.php">OTA YHTEYTTÄ</a>
+            </div>
+        </nav>
+
+        <main>
+            <section
+                class="py-5"
+                style="background-color: #0f2854; color: #ffffff"
+            >
+                <div
+                    class="container py-5 justify-content-center"
+                    style="max-width: 800px"
+                >
+                    <div class="g-col-6">
+                        <h1>Kitarakeskus - Intohimosta musiikkiin</h1>
+                        <p>
+                            Tervetuloa Kitarakeskukseen, Suomen inspiroivimpaan
+                            kitaroiden verkkokauppaan. Me emme vain myy
+                            instrumentteja; me autamme muusikoita - niin
+                            aloittelijoita kuin ammattilaisia - löytämään oman
+                            äänensä.
+                        </p>
+                    </div>
+                </div>
+            </section>
+            <section class="py-5 company-cta1" style="color: #ffffff">
+                <div class="container py-5" style="max-width: 800px">
+                    <div class="g-col-6">
+                        <h2>Kitarakeskus - Intohimosta musiikkiin</h2>
+                        <p>
+                            Kitarakeskus syntyi yksinkertaisesta ajatuksesta:
+                            halusta tarjota laadukkaita instrumentteja,
+                            asiantuntevaa palvelua ja vaivaton ostokokemus
+                            suoraan kotisohvalle. Me uskomme, että jokainen
+                            ansaitsee soittimen, joka tuntuu hyvältä, näyttää
+                            upealta ja kuulostaa vielä paremmalta.
+                        </p>
+                        <h3>Miksi valita Kitarakeskus?</h3>
+                        <p>
+                            Kitarakeskuksessa tinkimätön laatu ja aito
+                            asiantuntemus kohtaavat. Kuratoimme valikoimamme
+                            suurella sydämellä varmistaaksemme, että jokainen
+                            soitin – aina ensimmäisestä akustisesta ammattitason
+                            sähkökitaraan – täyttää korkeat laatustandardimme.
+                        </p>
+                    </div>
+                </div>
+            </section>
+            <section class="py-5 company-cta2">
+                <div class="container py-5">
+                    <div class="row g-4 align-items-start">
+                        <div class="col-12 col-md mb-4">
+                            <h2>Lupauksemme sinulle</h2>
+                            <p>
+                                Me Kitarakeskuksessa haluamme madaltaa kynnystä
+                                aloittaa uusi harrastus ja tarjota kokeneille
+                                soittajille välineet, jotka vievät heidät
+                                uudelle tasolle. Meille jokainen asiakas on
+                                tärkeä, ja tavoitteemme on, että olet
+                                100-prosenttisen tyytyväinen uuteen kitaraasi.
+                            </p>
+                            <p>
+                                <strong>
+                                    Oletko valmis aloittamaan matkasi?
+                                </strong>
+                            </p>
+                            <a href="contact.php" class="button">
+                                Ota yhteyttä
+                            </a>
+                        </div>
+                        <div class="col-12 col-md">
+                            <img
+                                src="images/Kitarakeskus-company2.jpg"
+                                alt="Kitarakeskus"
+                                class="img-fluid mx-auto d-block"
+                            />
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <div class="container py-5 footer">
+                <div class="row g-4">
+                    <div class="col-12 col-md-6">
+                        <img
+                            class="logo"
+                            src="images/Kitarakeskus.png"
+                            alt="Kitarakeskus"
+                        />
+                        <p style="padding-top: 1rem; font-size: 0.9rem">
+                            <i>Kitaroita juuri sinua varten.</i>
+                        </p>
+                    </div>
+
+                    <div class="col-12 col-md">
+                        <p><b>Pikalinkit</b></p>
+                        <p><a href="products.php">Tuotteet</a></p>
+                        <p><a href="company.php">Yritys</a></p>
+                    </div>
+
+                    <div class="col-12 col-md">
+                        <p><b>Yhteystiedot</b></p>
+                        <p class="address">Kitarakeskus</p>
+                        <p class="address">Osoite 1</p>
+                        <p class="address">12345</p>
+                        <p class="address">Helsinki</p>
+                        <p class="address">p. 020 123 2345</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container copyright">
+                <p>© 2026 Kitarakeskus - Tietosuojaseloste</p>
+            </div>
+        </footer>
+    </body>
+</html>

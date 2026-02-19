@@ -1,0 +1,109 @@
+<?php
+?>
+<!doctype html>
+<html lang="fi">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>
+            Kitarakeskus - Jokainen meistä ansaitsee vähän paremman kitaran
+        </title>
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+            crossorigin="anonymous"
+        />
+        <link rel="stylesheet" href="style.css" />
+        <link rel="stylesheet" href="nav.css" />
+        <link rel="stylesheet" href="footer.css" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Poppins:wght@300;400;600&display=swap"
+            rel="stylesheet"
+        />
+    </head>
+    <body>
+        <nav class="nav">
+            <div class="nav-left-div">
+                <a href="index.php">
+                    <img
+                        class="logo"
+                        src="images/Kitarakeskus.png"
+                        alt="Kitarakeskus"
+                    />
+                </a>
+            </div>
+
+            <div class="nav-right-div">
+                <a class="nav-basic-link" href="index.php">ETUSIVU</a>
+                <a class="nav-basic-link" href="products.php">TUOTTEET</a>
+                <a class="nav-basic-link" href="company.php">YRITYS</a>
+                <a class="contact-button" href="contact.php">OTA YHTEYTTÄ</a>
+            </div>
+        </nav>
+
+        <main class="flex-grow-1">
+            <section class="contact-section py-5 h-100">
+                <div class="container py-5 kapea">
+                    <div class="row g-4 contact-panel">
+                        <div class="col-12 col-md mb-4 contact-left">
+                            <h1>Ota yhteyttä</h1>
+                            <div class="contact-text">
+                                <p class="strong">Kitarakeskus</p>
+                                <p>Osoite 1, 00100 Helsinki</p>
+                                <p>Y-tunnus</p>
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-md contact-card text-center">
+                            <div class="contact-card-block">
+                                <p class="label">PUHELIN</p>
+                                <p class="value">050 123 4567</p>
+                            </div>
+
+                            <div class="contact-card-block">
+                                <p class="label">SÄHKÖPOSTI</p>
+                                <p class="value">info@kitarakeskus.fi</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <div class="container py-5 footer">
+                <div class="row g-4">
+                    <div class="col-12 col-md-6">
+                        <img
+                            class="logo"
+                            src="images/Kitarakeskus.png"
+                            alt="Kitarakeskus"
+                        />
+                        <p style="padding-top: 1rem; font-size: 0.9rem">
+                            <i>Kitaroita juuri sinua varten.</i>
+                        </p>
+                    </div>
+
+                    <div class="col-12 col-md">
+                        <p><b>Pikalinkit</b></p>
+                        <p><a href="products.php">Tuotteet</a></p>
+                        <p><a href="company.php">Yritys</a></p>
+                    </div>
+
+                    <div class="col-12 col-md">
+                        <p><b>Yhteystiedot</b></p>
+                        <p class="address">Kitarakeskus</p>
+                        <p class="address">Osoite 1</p>
+                        <p class="address">12345</p>
+                        <p class="address">Helsinki</p>
+                        <p class="address">p. 020 123 2345</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container copyright">
+                <p>© 2026 Kitarakeskus - Tietosuojaseloste</p>
+            </div>
+        </footer>
+    </body>
+</html>

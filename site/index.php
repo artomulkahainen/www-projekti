@@ -1,3 +1,5 @@
+<?php
+?>
 <!doctype html>
 <html lang="fi">
     <head>
@@ -23,7 +25,7 @@
     <body>
         <nav class="nav">
             <div class="nav-left-div">
-                <a href="index.html">
+                <a href="index.php">
                     <img
                         class="logo"
                         src="images/Kitarakeskus.png"
@@ -31,20 +33,18 @@
                     />
                 </a>
             </div>
+
             <div class="nav-right-div">
-                <a class="nav-basic-link" href="index.html">ETUSIVU</a>
-                <a class="nav-basic-link" href="products.html">TUOTTEET</a>
-                <a class="nav-basic-link" href="company.html">YRITYS</a>
-                <a class="contact-button" href="contact.html">OTA YHTEYTTÄ</a>
+                <a class="nav-basic-link" href="index.php">ETUSIVU</a>
+                <a class="nav-basic-link" href="products.php">TUOTTEET</a>
+                <a class="nav-basic-link" href="company.php">YRITYS</a>
+                <a class="contact-button" href="contact.php">OTA YHTEYTTÄ</a>
             </div>
-            <figure class="hambuger-figure">
-                <img class="hamburger-menu-btn" src="icons/menu.svg" />
-            </figure>
         </nav>
 
         <main class="main-content">
             <section
-                class="hero-front d-flex flex-column justify-content-center align-items-center"
+                class="hero-front py-5 d-flex flex-column justify-content-center align-items-center"
             >
                 <div class="container">
                     <h1 class="highlight">Kitarakeskus</h1>
@@ -56,14 +56,11 @@
                         soittajille. Meidän kanssamme pääset nopeasti ja
                         helposti soittamaan.
                     </p>
-                    <a href="products.html" class="button">Katso valikoima</a>
+                    <a href="products.php" class="button">Katso valikoima</a>
                 </div>
             </section>
-            <section style="background-color: #0f2854; color: #ffffff">
-                <div
-                    class="container py-5 justify-content-center"
-                    style="max-width: 1000px"
-                >
+            <section class="py-5 tumma">
+                <div class="container py-5 justify-content-center kapea">
                     <div class="g-col-6">
                         <h2>Miksi Kitarakeskus?</h2>
                         <p>
@@ -82,10 +79,10 @@
                     </div>
                 </div>
             </section>
-            <section>
+            <section class="py-5">
                 <div class="container py-5">
-                    <div class="row align-items-start">
-                        <div class="col-8">
+                    <div class="row g-4 align-items-start">
+                        <div class="col-12 col-md-6 mb-4">
                             <h2>Kitarakeskus syntyi rakkaudesta musiikkiin</h2>
                             <p>
                                 Tavoitteenamme on tarjota kitaristeille
@@ -93,13 +90,17 @@
                                 luotettavasti. Olitpa vasta-alkaja tai kokenut
                                 soittaja, meiltä löydät sopivan kitaran.
                             </p>
-                            <a href="company.html" class="button">Lue lisää</a>
+                            <a href="company.php" class="button">Lue lisää</a>
                         </div>
-                        <div class="col-4">
+                        <div
+                            class="col-12 col-md d-flex justify-content-center"
+                        >
                             <img
+                                kitara
                                 src="images/16024488_800.jpg"
                                 alt="Kitarakeskus"
                                 height="400"
+                                width="auto"
                             />
                         </div>
                     </div>
@@ -117,42 +118,44 @@
                         musiikkiin, kun taas akustinen kitara on hyvä valinta
                         säestykseen ja kotisoittoon.
                     </p>
-                    <a href="contact.html" class="button">Ota yhteyttä</a>
+                    <a href="contact.php" class="button">Ota yhteyttä</a>
                 </div>
             </section>
         </main>
-        <footer class="footer">
-            <div class="footer-left d-flex flex-column justify-content-between">
-                <div class="logo-container">
-                    <img
-                        class="logo"
-                        src="images/Kitarakeskus.png"
-                        alt="Kitarakeskus"
-                    />
-                    <p style="padding-top: 1rem; font-size: 0.9rem">
-                        <i>Kitaroita juuri sinua varten.</i>
-                    </p>
+        <footer>
+            <div class="container py-5 footer">
+                <div class="row g-4">
+                    <div class="col-12 col-md-6">
+                        <img
+                            class="logo"
+                            src="images/Kitarakeskus.png"
+                            alt="Kitarakeskus"
+                        />
+                        <p style="padding-top: 1rem; font-size: 0.9rem">
+                            <i>Kitaroita juuri sinua varten.</i>
+                        </p>
+                    </div>
+
+                    <div class="col-12 col-md">
+                        <p><b>Pikalinkit</b></p>
+                        <p><a href="products.php">Tuotteet</a></p>
+                        <p><a href="company.php">Yritys</a></p>
+                    </div>
+
+                    <div class="col-12 col-md">
+                        <p><b>Yhteystiedot</b></p>
+                        <p class="address">Kitarakeskus</p>
+                        <p class="address">Osoite 1</p>
+                        <p class="address">12345</p>
+                        <p class="address">Helsinki</p>
+                        <p class="address">p. 020 123 2345</p>
+                    </div>
                 </div>
-                <p class="copyright">© 2026 Kitarakeskus - Tietosuojaseloste</p>
             </div>
-            <div class="d-flex flex-column">
-                <p><b>Pikalinkit</b></p>
-                <a href="products.html">Tuotteet</a>
-                <a href="company.html">Yritys</a>
+
+            <div class="container copyright">
+                <p>© 2026 Kitarakeskus - Tietosuojaseloste</p>
             </div>
-            <div
-                class="footer-right d-flex flex-column align-items-center justify-content-center"
-            >
-                <p style="margin-bottom: 1rem"><b>Yhteystiedot</b></p>
-                <p class="address">Kitarakeskus</p>
-                <p class="address">Osoite 1</p>
-                <p class="address">12345</p>
-                <p class="address">Helsinki</p>
-                <p class="address">p. 020 123 2345</p>
-            </div>
-            <p class="copyright-mobile">
-                © 2026 Kitarakeskus - Tietosuojaseloste
-            </p>
         </footer>
     </body>
 </html>

@@ -1,12 +1,68 @@
 services:
-  web:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    image: www-projekti:latest
-    ports:
-      - "3000:80"
-    volumes:
-      - ./site/:/usr/share/nginx/html:ro
-      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
-    restart: unless-stopped
+    site:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        container_name: ecommerce
+        restart: unless-stopped
+        depends_on:
+            - db
+            - migration
+        environment:
+            DB_HOST: db
+            DB_PORT: 3306
+            DB_NAME: myapp
+            DB_USER: user
+            DB_PASSWORD: pw12345
+        ports:
+            - '8080:80'
+        volumes:
+            - ./site/:/var/www/html
+    migration:
+        image: python:3.14-slim
+        environment:
+            DB_HOST: db
+            DB_PORT: 3306
+            DB_NAME: myapp
+            DB_USER: user
+            DB_PASSWORD: pw12345
+        depends_on:
+            - db
+        volumes:
+            - ./scripts/migrate.py:/app/migrate.py:ro
+        working_dir: /app
+        entrypoint: ['/bin/sh', '-c']
+        command: >
+            "pip install --no-cache-dir pymysql &&
+            pip install --upgrade pip setuptools wheel && 
+            pip install cryptography && 
+            python migrate.py"
+        restart: 'no'
+    db:
+        image: mysql:8.0
+        container_name: ecommerce-db
+        restart: unless-stopped
+        environment:
+            MYSQL_ROOT_PASSWORD: rootpw
+            MYSQL_DATABASE: myapp
+            MYSQL_USER: user
+            MYSQL_PASSWORD: pw12345
+        volumes:
+            - e_commerce_db_data:/var/lib/mysql
+        ports:
+            - '3306:3306'
+    phpmyadmin:
+        image: phpmyadmin/phpmyadmin:latest
+        container_name: phpmyadmin_ui_ecommerce
+        restart: unless-stopped
+        depends_on:
+            - db
+        environment:
+            PMA_HOST: db
+            PMA_PORT: 3306
+            PMA_USER: user
+            PMA_PASSWORD: pw12345
+        ports:
+            - '8081:80'
+volumes:
+    e_commerce_db_data:
